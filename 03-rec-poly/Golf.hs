@@ -52,7 +52,7 @@ extract k n = take k . drop (n-1)
 --
 -- use putStr (histogram [3,5]) to show this output in ghci
 histogram :: [Integer] -> String
-histogram xs = unlines (map (line c) [m+1,m..1]) ++ "==========\n0123456789\n"
+histogram xs = unlines (map (line c) $ reverse [1..m]) ++ "==========\n0123456789\n"
   where c = count xs
         m = maximum c
 
